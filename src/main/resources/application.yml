@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: springboot1
+logging:
+  level:
+    root: warn
+    com:
+      example: debug
+  pattern:
+    console: '%-5level %C.%M[%line] - %msg%n'
+  file:
+    name: D:/logfile/application.txt
+server:
+  port: 8080
