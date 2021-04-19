@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class UserTest {
     @Test
     public void userTest1(){
-      User user = User.builder().id(1).name("ddd").build();
+      User user = User.builder().name("ddd").build();
        log.debug(String.valueOf(user));
     }
 }

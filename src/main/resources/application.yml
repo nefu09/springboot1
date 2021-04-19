@@ -1,6 +1,12 @@
 spring:
   application:
     name: springboot1
+  datasource:
+    url: 'jdbc:mysql://114.116.213.241:3306/2018214215?createDatabaseIfNotExist=true&serverTimezone=Asia/Shanghai'
+    username: 2018214215
+    password: 2018214215
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
 logging:
   level:
     root: warn

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.springboot1.example02.UserDTOMapper">
+    <resultMap id="userDTOResultMap" type="com.example.springboot1.example01.UserDTO">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="company" property="company"/>
+        <collection property="address" columnPrefix="a_"
+        ofType="com.example.springboot1.example01.Address" autoMapping="true">
+        </collection>
+    </resultMap>
+  <select id="selectById" resultMap="userDTOResultMap">
+      select u.*,a.id a_id,a.detail a_detail,a.user_id a_userid,a.create_time a_createtime,
+      a.update_time a_updatetime from user u join address a on u.id = a.user_id where u.id=#{id}
+  </select>
+</mapper>

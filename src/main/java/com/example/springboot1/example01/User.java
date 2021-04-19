@@ -1,19 +1,28 @@
 package com.example.springboot1.example01;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.annotation.FieldStrategy;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import java.time.LocalDateTime;
+import lombok.*;
 
-@Data
-@AllArgsConstructor
+@Setter
+@Getter
+@ToString
 @NoArgsConstructor
-@Slf4j
 @Builder
+@AllArgsConstructor
+@TableName("user")
 public class User {
-    private int id;
+    private Long id;
+
     private String name;
-    private int age;
+
+    private String company;
+
+    @TableField(updateStrategy = FieldStrategy.NEVER)
+    private LocalDateTime createTime;
+
+    @TableField(updateStrategy = FieldStrategy.NEVER)
+    private LocalDateTime updateTime;
 }
